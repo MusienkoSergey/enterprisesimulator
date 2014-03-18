@@ -39,7 +39,7 @@ public class Application {
             System.out.println("Salary " + employee.getSalary());
         }
 
-        System.out.println("\nОтсортировано по Имени");
+        System.out.println("\nОтсортировано по зарплате\n");
 
         for (Employee employee: employees1) {
             System.out.println("Id " + employee.getId());
