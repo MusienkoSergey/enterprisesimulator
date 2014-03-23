@@ -7,8 +7,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "Employee")
-public class EmployeeWithHourlyWages extends Employee{
-    public double solveSalary(double hours){
+public class EmployeeWithHourlyWages extends Employee {
+    public double solveSalary(double hours) {
         double result = 8*8*hours;
         setSalary(result);
         return result;

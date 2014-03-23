@@ -16,6 +16,5 @@
         <mapping class="ua.ck.codenvy.simulator.entity.EmployeeWithHourlyWages" />
         <mapping class="ua.ck.codenvy.simulator.entity.EmployeeWithFixedSalary" />
 
-
     </session-factory>
 </hibernate-configuration>

@@ -14,12 +14,13 @@ import java.util.Random;
  */
 public class Generator {
 
-    private List<Employee> Empl = new ArrayList<Employee>();
+    private List<Employee> empl = null;
 
     public List<Employee> start () {
 
+        empl = new ArrayList<Employee>();
         Random rand = new Random();
-        int namber = rand.nextInt(9)+1;
+        int number = rand.nextInt(9)+1;
 
         String[] name = {
                 "Alexandrov",
@@ -70,22 +71,21 @@ public class Generator {
                 15.5,
                 10.43,
                 19.01,
-                12,77
+                12,77,
         };
 
-    for(int i = 0; i < namber; i++) {
+    for(int i = 0; i < number; i++) {
         if ((i % 2) == 1) {
-
-            Empl.add(i, new EmployeeWithFixedSalary());
-            Empl.get(i).setSalary(fixSalary[rand.nextInt(fixSalary.length)]);
+            empl.add(i, new EmployeeWithFixedSalary());
+            ((EmployeeWithFixedSalary)empl.get(i)).solveSalary(fixSalary[rand.nextInt(hSalary.length)]);
+            //empl.get(i).setSalary(fixSalary[rand.nextInt(fixSalary.length)]);
+        } else {
+            empl.add(i, new EmployeeWithHourlyWages());
+            ((EmployeeWithHourlyWages)empl.get(i)).solveSalary(hSalary[rand.nextInt(hSalary.length)]);
         }
-        else {
-            Empl.add(i, new EmployeeWithHourlyWages());
-            ((EmployeeWithHourlyWages)Empl.get(i)).solveSalary(hSalary[rand.nextInt(hSalary.length)]);
-        }
-        Empl.get(i).setSurname(name[rand.nextInt(name.length)]);
-        Empl.get(i).setDateOfBirth(date[rand.nextInt(date.length)]);
+        empl.get(i).setSurname(name[rand.nextInt(name.length)]);
+        empl.get(i).setDateOfBirth(date[rand.nextInt(date.length)]);
     }
-        return Empl;
+        return empl;
     }
 }

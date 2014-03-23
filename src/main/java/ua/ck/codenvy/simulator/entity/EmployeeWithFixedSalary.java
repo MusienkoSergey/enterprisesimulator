@@ -7,8 +7,9 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "Employee")
-public class EmployeeWithFixedSalary extends Employee{
-    public double solveSalary(){
-        return getSalary();
+public class EmployeeWithFixedSalary extends Employee {
+    public double solveSalary(double salary) {
+        setSalary(salary);
+        return salary;
     }
 }

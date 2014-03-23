@@ -26,11 +26,10 @@ public class Application {
 
         for (Employee employee: company.getEmployees()) {
             Factory.getInstance().getCompanyDao().addEmployee(employee);
-        };
+        }
 
         employees = Factory.getInstance().getCompanyDao().getAllEmployee();
         employees1 = Factory.getInstance().getCompanyDao().sortingBySalary();
-
 
         for (Employee employee: employees) {
             System.out.println("Id " + employee.getId());
