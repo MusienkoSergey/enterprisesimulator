@@ -2,6 +2,7 @@ package ua.ck.codenvy.simulator.generator;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
@@ -25,7 +26,7 @@ public class TestGenerator {
 
     @Test
     public void testStartNotNull() {
-        for (int i = 0; i < 10; i++){
+        for (int i = 0; i < 100; i++){
             assertNotNull(generator.start());
         }
     }

@@ -71,14 +71,13 @@ public class Generator {
                 15.5,
                 10.43,
                 19.01,
-                12,77,
+                12.77,
         };
 
     for(int i = 0; i < number; i++) {
         if ((i % 2) == 1) {
             empl.add(i, new EmployeeWithFixedSalary());
-            ((EmployeeWithFixedSalary)empl.get(i)).solveSalary(fixSalary[rand.nextInt(hSalary.length)]);
-            //empl.get(i).setSalary(fixSalary[rand.nextInt(fixSalary.length)]);
+            ((EmployeeWithFixedSalary)empl.get(i)).solveSalary(fixSalary[rand.nextInt(fixSalary.length)]);
         } else {
             empl.add(i, new EmployeeWithHourlyWages());
             ((EmployeeWithHourlyWages)empl.get(i)).solveSalary(hSalary[rand.nextInt(hSalary.length)]);
