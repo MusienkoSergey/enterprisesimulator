@@ -8,7 +8,7 @@ CREATE  TABLE IF NOT EXISTS `employees`.`Employee` (
   `id` INT NOT NULL AUTO_INCREMENT ,
   `date_of_birth` DATE NULL ,
   `surname` VARCHAR(200) NULL ,
-  `salary` INT NULL ,
+  `salary` DOUBLE NULL ,
   `dtype` VARCHAR(200) NOT NULL,
   PRIMARY KEY (`id`))
   ENGINE = InnoDB;

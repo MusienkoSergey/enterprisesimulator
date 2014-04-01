@@ -1,10 +1,9 @@
 package ua.ck.codenvy.simulator.main;
 
-import ua.ck.codenvy.simulator.dao.Factory;
+import ua.ck.codenvy.simulator.dao.CompanyDaoJDBC;
 import ua.ck.codenvy.simulator.entity.Company;
 import ua.ck.codenvy.simulator.entity.Employee;
 import ua.ck.codenvy.simulator.generator.Generator;
-import ua.ck.codenvy.simulator.util.HibernateUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -20,16 +19,17 @@ public class Application {
 
         Company company = new Company();
         Generator generator = new Generator();
+        CompanyDaoJDBC companyDaoGDBC = new CompanyDaoJDBC();
+        companyDaoGDBC.deleteAllEmployee();
 
         company.setEmployees(generator.start());
-        Factory.getInstance().getCompanyDao().deleteAllEmployee();
 
         for (Employee employee: company.getEmployees()) {
-            Factory.getInstance().getCompanyDao().addEmployee(employee);
+            companyDaoGDBC.addEmployee(employee);
         }
 
-        employees = Factory.getInstance().getCompanyDao().getAllEmployee();
-        employees1 = Factory.getInstance().getCompanyDao().sortingBySalary();
+        employees = companyDaoGDBC.getAllEmployee();
+
 
         for (Employee employee: employees) {
             System.out.println("Id " + employee.getId());
@@ -40,6 +40,8 @@ public class Application {
 
         System.out.println("\nОтсортировано по зарплате\n");
 
+        employees1 = companyDaoGDBC.sortingBySalary();
+
         for (Employee employee: employees1) {
             System.out.println("Id " + employee.getId());
             System.out.println("Surname " + employee.getSurname());
@@ -47,6 +49,5 @@ public class Application {
             System.out.println("Salary " + employee.getSalary());
         }
 
-        HibernateUtil.stopConnectionProvider();
     }
 }
