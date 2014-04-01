@@ -1,8 +1,6 @@
 package ua.ck.codenvy.simulator.generator;
 
-import ua.ck.codenvy.simulator.entity.Employee;
-import ua.ck.codenvy.simulator.entity.EmployeeWithFixedSalary;
-import ua.ck.codenvy.simulator.entity.EmployeeWithHourlyWages;
+import ua.ck.codenvy.simulator.entity.*;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -75,11 +73,12 @@ public class Generator {
         };
 
     for(int i = 0; i < number; i++) {
+        EmployeeFactory employeeFactory = new EmployeeFactory();
         if ((i % 2) == 1) {
-            empl.add(i, new EmployeeWithFixedSalary());
+            empl.add(i, employeeFactory.CreateEmployee(TypeEmployee.EMPLOYEE_WITH_FIXED_SALARY));
             ((EmployeeWithFixedSalary)empl.get(i)).solveSalary(fixSalary[rand.nextInt(fixSalary.length)]);
         } else {
-            empl.add(i, new EmployeeWithHourlyWages());
+            empl.add(i, employeeFactory.CreateEmployee(TypeEmployee.EMPLOYEE_WITH_HOURLY_WAGES));
             ((EmployeeWithHourlyWages)empl.get(i)).solveSalary(hSalary[rand.nextInt(hSalary.length)]);
         }
         empl.get(i).setSurname(name[rand.nextInt(name.length)]);
