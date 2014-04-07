@@ -16,8 +16,9 @@ public class Application {
 
         List<Employee> employees;
         List<Employee> employees1;
+        Company company = null;
 
-        Company company = new Company();
+        company = Company.getInstance();
         Generator generator = new Generator();
         CompanyDaoJDBC companyDaoGDBC = new CompanyDaoJDBC();
         companyDaoGDBC.deleteAllEmployee();
