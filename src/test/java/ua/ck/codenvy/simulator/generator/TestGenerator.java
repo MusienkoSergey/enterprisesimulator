@@ -7,14 +7,14 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 /**
- * Created by sergey on 23.03.14.
- */
+* Created by sergey on 23.03.14.
+*/
 public class TestGenerator {
     Generator generator = null;
 
     @Before
     public void testStartInit() {
-        generator = new Generator();
+        generator = new GeneratorNumberOne();
     }
 
     @Test

@@ -1,9 +1,13 @@
 package ua.ck.codenvy.simulator.main;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
 import ua.ck.codenvy.simulator.dao.CompanyDaoJDBC;
 import ua.ck.codenvy.simulator.entity.Company;
 import ua.ck.codenvy.simulator.entity.Employee;
 import ua.ck.codenvy.simulator.generator.Generator;
+import ua.ck.codenvy.simulator.generator.GeneratorModuleOne;
+import ua.ck.codenvy.simulator.generator.GeneratorModuleTwo;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -18,12 +22,17 @@ public class Application {
         List<Employee> employees1;
         Company company = null;
 
-        company = Company.getInstance();
-        Generator generator = new Generator();
+        //company = Company.getInstance();
+
+        Injector injector = Guice.createInjector(new GeneratorModuleTwo());
+        company = injector.getInstance(Company.class);
+
+        company.hireEmployeesToWork();
+
         CompanyDaoJDBC companyDaoGDBC = new CompanyDaoJDBC();
         companyDaoGDBC.deleteAllEmployee();
 
-        company.setEmployees(generator.start());
+
 
         for (Employee employee: company.getEmployees()) {
             companyDaoGDBC.addEmployee(employee);

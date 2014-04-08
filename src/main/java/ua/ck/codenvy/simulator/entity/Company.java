@@ -1,5 +1,8 @@
 package ua.ck.codenvy.simulator.entity;
 
+import com.google.inject.Inject;
+import ua.ck.codenvy.simulator.generator.Generator;
+
 import java.util.List;
 
 /**
@@ -8,8 +11,13 @@ import java.util.List;
 public class Company {
 
     private static Company instance = null;
+
+    @Inject
+    private Generator generator;
+
     private List<Employee> employees;
 
+    @Inject
     private Company() { }
 
     public static Company getInstance() {
@@ -26,4 +34,9 @@ public class Company {
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
     }
+
+    public void hireEmployeesToWork(){
+        setEmployees(generator.start());
+    }
+
 }
