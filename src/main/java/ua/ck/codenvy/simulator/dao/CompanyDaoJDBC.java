@@ -14,7 +14,7 @@ import java.util.List;
 */
 public class CompanyDaoJDBC {
 
-    public void addEmployee(Employee empl) throws SQLException {
+    public void addEmployee(Employee empl) {
         Connection c = null;
         Class newClass = empl.getClass();
         String typeEmployee = newClass.getSimpleName();
@@ -41,7 +41,7 @@ public class CompanyDaoJDBC {
         }
     }
 
-    public Employee getEmployeeById(Long id) throws SQLException {
+    public Employee getEmployeeById(Long id) {
         Connection c = null;
         PreparedStatement ps;
         ResultSet rs;
@@ -79,7 +79,7 @@ public class CompanyDaoJDBC {
     }
 
 
-    public List<Employee> getAllEmployee() throws SQLException {
+    public List<Employee> getAllEmployee() {
         List<Employee> employees = new ArrayList<Employee>();
         Connection c = null;
         ResultSet rs;
@@ -114,7 +114,7 @@ public class CompanyDaoJDBC {
         return employees;
     }
 
-    public void deleteEmployeeForId(Long id) throws SQLException {
+    public void deleteEmployeeForId(Long id) {
         Connection c = null;
         PreparedStatement ps;
         try {
@@ -136,27 +136,29 @@ public class CompanyDaoJDBC {
         }
     }
 
-    public void deleteAllEmployee() throws SQLException {
+    public void deleteAllEmployee() {
         Connection c = null;
+        PreparedStatement preparedStatement = null;
         try {
             c = JDBCConnection.getConnection();
             String sql = "DELETE FROM Employee";
-            PreparedStatement preparedStatement = c.prepareStatement(sql);
+            preparedStatement = c.prepareStatement(sql);
             preparedStatement.executeUpdate();
-            preparedStatement.close();
+
         } catch (Exception e) {
             e.printStackTrace();
         } finally {
             try {
                 if (c != null)
                     c.close();
+                    preparedStatement.close();
             } catch (SQLException e) {
                 e.printStackTrace();
             }
         }
     }
 
-    public List<Employee> sortingBySurname() throws SQLException {
+    public List<Employee> sortingBySurname() {
 
         List<Employee> employees = new ArrayList<Employee>();
         Connection c = null;
@@ -192,7 +194,7 @@ public class CompanyDaoJDBC {
         return employees;
     }
 
-    public List<Employee> sortingBySalary() throws SQLException {
+    public List<Employee> sortingBySalary() {
 
         List<Employee> employees = new ArrayList<Employee>();
         Connection c = null;
@@ -228,7 +230,7 @@ public class CompanyDaoJDBC {
         return employees;
     }
 
-    public List<Employee> sortingByDateOfBirth() throws SQLException {
+    public List<Employee> sortingByDateOfBirth() {
 
         List<Employee> employees = new ArrayList<Employee>();
         Connection c = null;

@@ -20,7 +20,7 @@ public class TestGenerator {
     @Test
     public void testStart() {
         for (int i = 0; i < 10; i++){
-            assertTrue(generator.start().size() >= 1 && generator.start().size() <= 10);
+           assertTrue(generator.start().size() >= 1 && generator.start().size() <= 10);
         }
     }
 

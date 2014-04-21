@@ -19,7 +19,7 @@ public class GeneratorNumberTwo implements Generator{
 
         empl = new ArrayList<Employee>();
         Random rand = new Random();
-        int number = rand.nextInt(5)+1;
+        int number = rand.nextInt(4)+1;
 
         String[] name = {
                 "Alexandrov",

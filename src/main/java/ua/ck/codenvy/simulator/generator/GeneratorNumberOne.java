@@ -19,7 +19,7 @@ public class GeneratorNumberOne implements Generator{
 
         empl = new ArrayList<Employee>();
         Random rand = new Random();
-        int number = rand.nextInt(10)+6;
+        int number = rand.nextInt(5)+5;
 
         String[] name = {
                 "Alexandrov",
