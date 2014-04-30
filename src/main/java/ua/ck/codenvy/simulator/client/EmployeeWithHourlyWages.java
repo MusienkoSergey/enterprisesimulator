@@ -1,12 +1,12 @@
-package ua.ck.codenvy.simulator.entity;
+package ua.ck.codenvy.simulator.client;
 
-import javax.persistence.*;
+
+import ua.ck.codenvy.simulator.client.Employee;
 
 /**
  * Created by sergey on 16.03.14.
  */
-@Entity
-@Table(name = "Employee")
+
 public class EmployeeWithHourlyWages extends Employee {
     public double solveSalary(double hours) {
         double result = 8*8*hours;

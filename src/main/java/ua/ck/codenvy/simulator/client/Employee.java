@@ -1,28 +1,21 @@
-package ua.ck.codenvy.simulator.entity;
+package ua.ck.codenvy.simulator.client;
 
-import javax.persistence.*;
+import com.google.gwt.user.client.rpc.IsSerializable;
+
 import java.sql.Date;
 
 /**
  * Created by sergey on 16.03.14.
  */
-@Entity
-@Table(name = "Employee")
-public abstract class Employee {
 
+public abstract class Employee implements IsSerializable{
 
-    @Id
-    @GeneratedValue
-    @Column(name = "id")
     private int id;
 
-    @Column(name = "surname")
     private String surname;
 
-    @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
-    @Column(name = "salary")
     private double salary;
 
     protected Employee() {

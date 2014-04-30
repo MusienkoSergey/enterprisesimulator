@@ -1,5 +1,9 @@
 package ua.ck.codenvy.simulator.entity;
 
+import ua.ck.codenvy.simulator.client.Employee;
+import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.client.EmployeeWithHourlyWages;
+
 /**
  * Created by sergey on 01.04.14.
  */

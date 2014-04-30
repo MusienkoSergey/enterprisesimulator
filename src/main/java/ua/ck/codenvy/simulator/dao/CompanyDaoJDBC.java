@@ -1,8 +1,8 @@
 package ua.ck.codenvy.simulator.dao;
 
-import ua.ck.codenvy.simulator.entity.Employee;
-import ua.ck.codenvy.simulator.entity.EmployeeWithFixedSalary;
-import ua.ck.codenvy.simulator.entity.EmployeeWithHourlyWages;
+import ua.ck.codenvy.simulator.client.Employee;
+import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.client.EmployeeWithHourlyWages;
 import ua.ck.codenvy.simulator.util.JDBCConnection;
 
 import java.sql.*;

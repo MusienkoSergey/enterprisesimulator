@@ -1,6 +1,7 @@
 package ua.ck.codenvy.simulator.entity;
 
 import com.google.inject.Inject;
+import ua.ck.codenvy.simulator.client.Employee;
 import ua.ck.codenvy.simulator.generator.Generator;
 
 import java.util.List;

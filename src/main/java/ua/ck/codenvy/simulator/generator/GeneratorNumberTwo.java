@@ -1,5 +1,8 @@
 package ua.ck.codenvy.simulator.generator;
 
+import ua.ck.codenvy.simulator.client.Employee;
+import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.client.EmployeeWithHourlyWages;
 import ua.ck.codenvy.simulator.entity.*;
 
 import java.sql.Date;

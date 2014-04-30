@@ -4,9 +4,7 @@ import com.google.inject.Guice;
 import com.google.inject.Injector;
 import ua.ck.codenvy.simulator.dao.CompanyDaoJDBC;
 import ua.ck.codenvy.simulator.entity.Company;
-import ua.ck.codenvy.simulator.entity.Employee;
-import ua.ck.codenvy.simulator.generator.Generator;
-import ua.ck.codenvy.simulator.generator.GeneratorModuleOne;
+import ua.ck.codenvy.simulator.client.Employee;
 import ua.ck.codenvy.simulator.generator.GeneratorModuleTwo;
 
 import java.sql.SQLException;

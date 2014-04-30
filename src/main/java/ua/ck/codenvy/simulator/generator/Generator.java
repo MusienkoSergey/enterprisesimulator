@@ -1,6 +1,6 @@
 package ua.ck.codenvy.simulator.generator;
 
-import ua.ck.codenvy.simulator.entity.Employee;
+import ua.ck.codenvy.simulator.client.Employee;
 
 import java.util.List;
 

@@ -27,36 +27,48 @@
         <servlet-name>index</servlet-name>
         <servlet-class>ua.ck.codenvy.simulator.servlet.IndexServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>generator</servlet-name>
+        <servlet-class>ua.ck.codenvy.simulator.servlet.GeneratorServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>employees</servlet-name>
+        <servlet-class>ua.ck.codenvy.simulator.servlet.EmployeesServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>CreatorGenerator</servlet-name>
+        <servlet-class>ua.ck.codenvy.simulator.server.CreatorGeneratorImpl</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DbManager</servlet-name>
+        <servlet-class>ua.ck.codenvy.simulator.server.DbManagerImpl</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>generator</servlet-name>
-        <servlet-class>ua.ck.codenvy.simulator.servlet.GeneratorServlet</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>generator</servlet-name>
         <url-pattern>/generator</url-pattern>
     </servlet-mapping>
-
-    <servlet>
-        <servlet-name>employees</servlet-name>
-        <servlet-class>ua.ck.codenvy.simulator.servlet.EmployeesServlet</servlet-class>
-    </servlet>
-
     <servlet-mapping>
         <servlet-name>employees</servlet-name>
         <url-pattern>/employees</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreatorGenerator</servlet-name>
+        <url-pattern>/ua.ck.codenvy.simulator.GeneratorEmployees/creatorGenerator</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DbManager</servlet-name>
+        <url-pattern>/ua.ck.codenvy.simulator.ManagementEmployees/dbManager</url-pattern>
     </servlet-mapping>
 
     <error-page>
         <error-code>404</error-code>
         <location>/error404.jsp</location>
     </error-page>
-
 
 </web-app>
