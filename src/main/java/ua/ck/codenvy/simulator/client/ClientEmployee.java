@@ -1,25 +1,16 @@
 package ua.ck.codenvy.simulator.client;
 
-import com.google.gwt.user.client.rpc.IsSerializable;
-
-import java.sql.Date;
-
 /**
- * Created by sergey on 16.03.14.
+ * Created by sergey on 14.05.14.
  */
-
-public abstract class Employee implements IsSerializable{
-
+public class ClientEmployee {
     private int id;
 
     private String surname;
 
-    private Date dateOfBirth;
+    private String dateOfBirth;
 
     private double salary;
-
-    protected Employee() {
-    }
 
     public int getId() {
         return id;
@@ -37,11 +28,11 @@ public abstract class Employee implements IsSerializable{
         this.surname = surname;
     }
 
-    public Date getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(Date dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 

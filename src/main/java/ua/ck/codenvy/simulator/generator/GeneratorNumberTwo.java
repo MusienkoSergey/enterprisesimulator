@@ -1,9 +1,10 @@
-package ua.ck.codenvy.simulator.generator;
+package ua.ck.codenvy.simulator.generator;//package ua.ck.codenvy.simulator.generator;
 
-import ua.ck.codenvy.simulator.client.Employee;
-import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
-import ua.ck.codenvy.simulator.client.EmployeeWithHourlyWages;
-import ua.ck.codenvy.simulator.entity.*;
+import ua.ck.codenvy.simulator.entity.EmployeeFactory;
+import ua.ck.codenvy.simulator.entity.TypeEmployee;
+import ua.ck.codenvy.simulator.shared.Employee;
+import ua.ck.codenvy.simulator.shared.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.shared.EmployeeWithHourlyWages;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -11,9 +12,9 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Created by sergey on 08.04.14.
- */
-public class GeneratorNumberTwo implements Generator{
+* Created by sergey on 08.04.14.
+*/
+public class GeneratorNumberTwo implements Generator {
 
     private List<Employee> empl = null;
 

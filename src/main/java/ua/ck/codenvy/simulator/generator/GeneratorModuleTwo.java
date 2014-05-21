@@ -1,11 +1,11 @@
-package ua.ck.codenvy.simulator.generator;
+package ua.ck.codenvy.simulator.generator;//package ua.ck.codenvy.simulator.generator;
 
 import com.google.inject.AbstractModule;
 import com.google.inject.Singleton;
 
 /**
- * Created by sergey on 08.04.14.
- */
+* Created by sergey on 08.04.14.
+*/
 public class GeneratorModuleTwo extends AbstractModule {
 
     @Override

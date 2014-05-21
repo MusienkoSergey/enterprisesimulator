@@ -1,7 +1,7 @@
 package ua.ck.codenvy.simulator.entity;
 
 import org.junit.Test;
-import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.shared.EmployeeWithFixedSalary;
 
 import static org.junit.Assert.*;
 

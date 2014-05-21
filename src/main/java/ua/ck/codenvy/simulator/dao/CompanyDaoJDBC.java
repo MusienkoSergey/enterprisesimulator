@@ -1,11 +1,14 @@
 package ua.ck.codenvy.simulator.dao;
 
-import ua.ck.codenvy.simulator.client.Employee;
-import ua.ck.codenvy.simulator.client.EmployeeWithFixedSalary;
-import ua.ck.codenvy.simulator.client.EmployeeWithHourlyWages;
+import ua.ck.codenvy.simulator.shared.Employee;
+import ua.ck.codenvy.simulator.shared.EmployeeWithFixedSalary;
+import ua.ck.codenvy.simulator.shared.EmployeeWithHourlyWages;
 import ua.ck.codenvy.simulator.util.JDBCConnection;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 

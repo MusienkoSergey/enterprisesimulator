@@ -1,7 +1,5 @@
-package ua.ck.codenvy.simulator.client;
+package ua.ck.codenvy.simulator.shared;
 
-
-import ua.ck.codenvy.simulator.client.Employee;
 
 /**
  * Created by sergey on 16.03.14.
